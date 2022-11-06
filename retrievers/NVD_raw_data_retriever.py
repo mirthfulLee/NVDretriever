@@ -7,7 +7,7 @@ if __name__ == '__main__':
     total_vul_num = 200  # actual current value - 199186
     vuln_num_each_req = 50
     result_data = []
-    while (start_index < total_vul_num):
+    while start_index < total_vul_num:
         print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
         print('start to retrieve records {:d} to {:d}'.format(start_index, start_index + vuln_num_each_req - 1))
         resp = requests.get(base_api + '?startIndex={:d}&resultsPerPage={:d}'.format(start_index, vuln_num_each_req))
