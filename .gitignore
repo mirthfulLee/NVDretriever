@@ -1,1 +1,4 @@
 /result_data/*.json
+.history
+.idea
+.vscode
