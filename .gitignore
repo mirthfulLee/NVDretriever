@@ -1,4 +1,5 @@
 /result_data/*.json
+/result_data/*.csv
 .history
 .idea
 .vscode

@@ -8,7 +8,17 @@ nvd_base_api = "https://services.nvd.nist.gov/rest/json/cves/2.0/"
 bugzilla_base_api = "https://bugzilla.redhat.com/rest/bug/"
 start_index = 0
 total_vul_num = 199000  # actual current value - 199186
-vuln_num_each_req = 500
+vuln_num_each_req = 1000
+
+
+def get_via_api(api):
+    for _ in range(5):
+        try:
+            resp = requests.get(api)
+            return resp
+        except:
+            time.sleep(10)
+    return None
 
 
 def get_bugzilla_id(refs):
@@ -22,8 +32,8 @@ def get_bugzilla_id(refs):
 
 
 def get_bugzilla_bug_info(bugzilla_bug_id, base_api=bugzilla_base_api):
-    bugzilla_resp = requests.get(base_api + bugzilla_bug_id)
-    if bugzilla_resp.status_code >= 400:
+    bugzilla_resp = get_via_api(base_api + bugzilla_bug_id)
+    if bugzilla_resp is None or bugzilla_resp.status_code >= 400:
         return None
     bugzilla_bug_info = json.loads(bugzilla_resp.text).get("bugs")[0]
     return bugzilla_bug_info
@@ -40,13 +50,13 @@ if __name__ == "__main__":
                 start_index, start_index + vuln_num_each_req - 1
             )
         )
-        # TODO: retry requests for 5 times if the the previous request crashed
-        resp = requests.get(
+        resp = get_via_api(
             nvd_base_api
             + "?startIndex={:d}&resultsPerPage={:d}".format(
                 start_index, vuln_num_each_req
             )
         )
+
         partial_vuln_list = json.loads(resp.text).get("vulnerabilities")
         for vuln in partial_vuln_list:
             bugzilla_bug_id = get_bugzilla_id(vuln.get("cve").get("references"))
