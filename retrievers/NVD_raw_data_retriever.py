@@ -2,6 +2,17 @@ import json
 import requests
 import time
 
+
+def get_via_api(rest_api, headers=None):
+    for _ in range(5):
+        try:
+            resp = requests.get(rest_api, headers=headers)
+            return resp
+        except:
+            time.sleep(10)
+    return None
+
+
 if __name__ == "__main__":
     base_api = "https://services.nvd.nist.gov/rest/json/cves/2.0/"
     start_index = 0
@@ -29,7 +40,7 @@ if __name__ == "__main__":
                 start_index, start_index + vuln_num_each_req - 1
             )
         )
-        resp = requests.get(
+        resp = get_via_api(
             base_api
             + "?startIndex={:d}&resultsPerPage={:d}".format(
                 start_index, vuln_num_each_req
@@ -40,7 +51,11 @@ if __name__ == "__main__":
         for vuln in partial_vuln_list:
             cur_row = {}
             start_index += 1
-            if vuln.get("cve").get("vulnStatus") == "Rejected":
+            # ! 有些index 对应的cve是被弃用了的，所以就不记录在raw data中了
+            if (
+                vuln.get("cve").get("vulnStatus") == "Rejected"
+                or vuln.get("cve").get("vulnStatus") == "Awaiting Analysis"
+            ):
                 continue
 
             cur_row["nvd_index"] = start_index
@@ -49,7 +64,7 @@ if __name__ == "__main__":
             cur_row["cwe"] = (
                 vuln.get("cve").get("weaknesses")[0].get("description")[0].get("value")
             )
-            target_metric = "cvssMetricV2" if start_index < 190865 else "cvssMetricV31"
+            target_metric = "cvssMetricV2" if start_index < 190855 else "cvssMetricV31"
             cur_row["cvss_v2_base"] = (
                 vuln.get("cve")
                 .get("metrics")
