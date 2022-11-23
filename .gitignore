@@ -1,3 +1,5 @@
+/result_data/NVD_*
+/result_data/cve_*
 /result_data/*.json
 .history
 .idea
