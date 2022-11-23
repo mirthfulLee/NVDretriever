@@ -29,16 +29,17 @@ target_columns = {
 
 nvd_json_file = "../result_data/NVD_filtered.json"
 records_csv_file = "../result_data/all_platform_cve_bugzila_reports.csv"
+# ! remember to change this start_index when start from the middle
 start_index = 0
 
 
 def get_via_api(rest_api, headers=None):
-    for _ in range(5):
+    for _ in range(3):
         try:
             resp = requests.get(rest_api, headers=headers)
             return resp
         except:
-            time.sleep(10)
+            time.sleep(5)
     return None
 
 
@@ -53,8 +54,12 @@ def get_bugzilla_bug_info(bugzilla_bug_id, base_api):
         or bugzilla_resp.url != url
     ):
         return None
-    bugzilla_bug_info = json.loads(bugzilla_resp.text).get("bugs")[0]
-    return bugzilla_bug_info
+    # ! the return text could be html for informing with status_code==200
+    try:
+        bugzilla_bug_info = json.loads(bugzilla_resp.text).get("bugs")[0]
+        return bugzilla_bug_info
+    except:
+        return None
 
 
 if __name__ == "__main__":
@@ -80,8 +85,8 @@ if __name__ == "__main__":
             print("start to retrieve nvd record-{:d}".format(cur_index))
         for ref in nvd_record.get("references"):
             ref_url = ref.get("url")
-            # ! there might be a "/bugzilla" before show_bug.cgi
-            simplified_ref = ref_url.replace("/bugzilla/show_bug", "/show_bug")
+            # ! there might be a "/bugzilla3?" before show_bug.cgi
+            simplified_ref = re.sub(r"/bugzilla3?/show_bug", "/show_bug", ref_url)
             simplified_ref = simplified_ref.replace("http://", "https://")
             if "bugzilla" not in simplified_ref or "show_bug.cgi" not in simplified_ref:
                 continue

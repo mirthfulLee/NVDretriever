@@ -1,5 +1,5 @@
-/result_data/*.json
-/result_data/*.csv
+/result_data/NVD_*
+/result_data/cve_*
 .history
 .idea
 .vscode
