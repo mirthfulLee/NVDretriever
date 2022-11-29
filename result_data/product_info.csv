@@ -1,0 +1,77 @@
+product,bugzilla_domain
+389,https://bugzilla.redhat.com
+ANCK 4.19 Dev,https://bugzilla.openanolis.cn
+Add-on SDK Graveyard,https://bugzilla.mozilla.org
+Beaker,https://bugzilla.redhat.com
+Bugzilla,https://bugzilla.mozilla.org
+Calendar,https://bugzilla.mozilla.org
+Cloud Services,https://bugzilla.mozilla.org
+Core,https://bugzilla.mozilla.org
+Core Graveyard,https://bugzilla.mozilla.org
+DevTools,https://bugzilla.mozilla.org
+Dogtag Certificate System,https://bugzilla.redhat.com
+Drivers,https://bugzilla.kernel.org
+EDK2,https://bugzilla.tianocore.org
+External Software Affecting Firefox Graveyard,https://bugzilla.mozilla.org
+Fedora,https://bugzilla.redhat.com
+Fedora EPEL,https://bugzilla.redhat.com
+Fedora Legacy,https://bugzilla.redhat.com
+Fenix,https://bugzilla.mozilla.org
+File System,https://bugzilla.kernel.org
+Firefox,https://bugzilla.mozilla.org
+Firefox Graveyard,https://bugzilla.mozilla.org
+Firefox Health Report Graveyard,https://bugzilla.mozilla.org
+Firefox OS Graveyard,https://bugzilla.mozilla.org
+Firefox for Android Graveyard,https://bugzilla.mozilla.org
+Firefox for iOS,https://bugzilla.mozilla.org
+GeckoView,https://bugzilla.mozilla.org
+IO/Storage,https://bugzilla.kernel.org
+IPFire,https://bugzilla.ipfire.org
+JBoss Enterprise Application Platform 4,https://bugzilla.redhat.com
+JBoss Enterprise Application Platform 6,https://bugzilla.redhat.com
+MailNews Core,https://bugzilla.mozilla.org
+Memory Management,https://bugzilla.kernel.org
+NSPR,https://bugzilla.mozilla.org
+NSS,https://bugzilla.mozilla.org
+Networking,https://bugzilla.kernel.org
+Other,https://bugzilla.kernel.org
+Other Applications Graveyard,https://bugzilla.mozilla.org
+Platform Specific/Hardware,https://bugzilla.kernel.org
+Plugins Graveyard,https://bugzilla.mozilla.org
+Process Management,https://bugzilla.kernel.org
+Pulp,https://bugzilla.redhat.com
+Red Hat Enterprise Linux 2.1,https://bugzilla.redhat.com
+Red Hat Enterprise Linux 3,https://bugzilla.redhat.com
+Red Hat Enterprise Linux 4,https://bugzilla.redhat.com
+Red Hat Enterprise Linux 5,https://bugzilla.redhat.com
+Red Hat Enterprise Linux 6,https://bugzilla.redhat.com
+Red Hat Enterprise Linux 7,https://bugzilla.redhat.com
+Red Hat Enterprise Linux 8,https://bugzilla.redhat.com
+Red Hat Enterprise Linux 9,https://bugzilla.redhat.com
+Red Hat Enterprise Linux Advanced Virtualization,https://bugzilla.redhat.com
+Red Hat Enterprise MRG,https://bugzilla.redhat.com
+Red Hat Enterprise Virtualization Manager,https://bugzilla.redhat.com
+Red Hat Linux,https://bugzilla.redhat.com
+Red Hat OpenStack,https://bugzilla.redhat.com
+Red Hat Public Beta,https://bugzilla.redhat.com
+Red Hat Satellite,https://bugzilla.redhat.com
+Red Hat Satellite 5,https://bugzilla.redhat.com
+Release Engineering,https://bugzilla.mozilla.org
+SeaMonkey,https://bugzilla.mozilla.org
+Security Assurance,https://bugzilla.mozilla.org
+Testing,https://bugzilla.mozilla.org
+Thunderbird,https://bugzilla.mozilla.org
+Tianocore Security Issues,https://bugzilla.tianocore.org
+Timers,https://bugzilla.kernel.org
+Toolkit,https://bugzilla.mozilla.org
+Virtualization,https://bugzilla.kernel.org
+WebExtensions,https://bugzilla.mozilla.org
+Webtools Graveyard,https://bugzilla.mozilla.org
+addons.mozilla.org,https://bugzilla.mozilla.org
+oVirt,https://bugzilla.redhat.com
+ovirt-engine,https://bugzilla.redhat.com
+ovirt-hosted-engine-setup,https://bugzilla.redhat.com
+pve,https://bugzilla.proxmox.com
+softwarecollections.org,https://bugzilla.redhat.com
+v4l-dvb,https://bugzilla.kernel.org
+vdsm,https://bugzilla.redhat.com

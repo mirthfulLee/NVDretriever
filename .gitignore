@@ -1,6 +1,8 @@
 /result_data/NVD_*
 /result_data/cve_*
 /result_data/*.json
+/logs/retrieve_BR/*.log
+/result_data/bugzilla_reports/*.csv
 .history
 .idea
 .vscode

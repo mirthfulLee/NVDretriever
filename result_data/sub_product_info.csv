@@ -1,0 +1,28 @@
+product,bugzilla_domain
+Core Graveyard,https://bugzilla.mozilla.org
+Core,https://bugzilla.mozilla.org
+DevTools,https://bugzilla.mozilla.org
+Add-on SDK Graveyard,https://bugzilla.mozilla.org
+Calendar,https://bugzilla.mozilla.org
+Firefox OS Graveyard,https://bugzilla.mozilla.org
+Firefox Graveyard,https://bugzilla.mozilla.org
+Firefox,https://bugzilla.mozilla.org
+Firefox for Android Graveyard,https://bugzilla.mozilla.org
+GeckoView,https://bugzilla.mozilla.org
+IO/Storage,https://bugzilla.kernel.org
+Firefox for iOS,https://bugzilla.mozilla.org
+MailNews Core,https://bugzilla.mozilla.org
+Memory Management,https://bugzilla.kernel.org
+NSPR,https://bugzilla.mozilla.org
+NSS,https://bugzilla.mozilla.org
+Networking,https://bugzilla.kernel.org
+Other,https://bugzilla.kernel.org
+Other Applications Graveyard,https://bugzilla.mozilla.org
+Platform Specific/Hardware,https://bugzilla.kernel.org
+Release Engineering,https://bugzilla.mozilla.org
+SeaMonkey,https://bugzilla.mozilla.org
+Thunderbird,https://bugzilla.mozilla.org
+Testing,https://bugzilla.mozilla.org
+Toolkit,https://bugzilla.mozilla.org
+WebExtensions,https://bugzilla.mozilla.org
+Webtools Graveyard,https://bugzilla.mozilla.org
