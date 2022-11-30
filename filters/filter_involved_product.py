@@ -1,8 +1,6 @@
 import pandas as pd
 import re
 
-records_csv_file = "../result_data/all_platform_cve_bugzila_reports.csv"
-result_file = "../result_data/product_info.csv"
 target_columns = {
     # bugzilla columns
     "bugzilla_url": str,
@@ -25,6 +23,8 @@ target_columns = {
 }
 
 if __name__ == "__main__":
+    records_csv_file = "../result_data/all_platform_cve_bugzila_reports.csv"
+    result_file = "../result_data/des_product_info.csv"
     bz_records = pd.read_csv(records_csv_file, header=0, dtype=target_columns)
 
     # * filter Security Response
@@ -41,8 +41,8 @@ if __name__ == "__main__":
         ).group(0),
         axis=1,
     )
-    product_cnt = product_cnt.loc[:, ["product", "bugzilla_domain"]].sort_values(
-        by="product"
-    )
+    product_cnt = product_cnt.loc[:, ["product", "bugzilla_domain"]].sample(frac=1)
+    # ! add offset column to enable the retriever to get data from the failure position
+    product_cnt["offset"] = 0
     print(product_cnt)
     product_cnt.to_csv(result_file, header=True, index=False)

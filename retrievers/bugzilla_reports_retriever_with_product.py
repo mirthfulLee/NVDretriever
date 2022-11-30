@@ -5,6 +5,7 @@ import json
 import logging
 import pandas as pd
 import threading
+import os
 
 
 def get_logger(logger_name, log_file, level=logging.INFO):
@@ -12,7 +13,7 @@ def get_logger(logger_name, log_file, level=logging.INFO):
     formatter = logging.Formatter(
         "%(asctime)s %(levelname)s: %(message)s", "%m-%d %H:%M:%S"
     )
-    fileHandler = logging.FileHandler(log_file, mode="w")
+    fileHandler = logging.FileHandler(log_file, mode="a")
     fileHandler.setFormatter(formatter)
 
     logger.setLevel(level)
@@ -55,7 +56,7 @@ target_columns = {
 }
 
 
-def get_buginfo_of(product, domain):
+def get_buginfo_of(product, domain, offset=0):
     short_product_name = product.replace("/", " ")
     logger = get_logger(
         product, "../logs/retrieve_BR/{}.log".format(short_product_name)
@@ -63,14 +64,13 @@ def get_buginfo_of(product, domain):
     logger.critical(
         "**** START the retrieving process of product {} ***".format(product)
     )
-    offset = 0
     bug_number_per_request = 500
     result_file = "../result_data/bugzilla_reports/BR_of_{}.csv".format(
         short_product_name
     )
-    csv_f = open(result_file, mode="w", newline="", encoding="utf-8")
+    csv_f = open(result_file, mode="a", newline="", encoding="utf-8")
     fw = csv.writer(csv_f)
-    if offset == 0:
+    if not os.path.getsize(result_file):
         fw.writerow(target_columns.keys())
         csv_f.flush()
     while True:
@@ -114,25 +114,32 @@ def get_buginfo_of(product, domain):
         "**** retrieving process of product {} have DONE ***".format(product)
     )
     csv_f.close()
+    # ! update offset
+    product_info.at[product, "offset"] = offset
+
     if multi_thread:
         pool_sema.release()
 
 
-product_info = pd.read_csv("../result_data/sub_product_info.csv")
+product_info_file = "../result_data/product_process.csv"
+product_info = pd.read_csv(product_info_file, index_col="product")
 multi_thread = False
-max_connections = 1
+max_connections = 5
 if multi_thread:
     pool_sema = threading.Semaphore(max_connections)
 
 if __name__ == "__main__":
     threads = []
-    for index, p in product_info.iterrows():
+    for product, info in product_info.iterrows():
         if multi_thread:
             pool_sema.acquire()
             product_thread = threading.Thread(
-                target=get_buginfo_of, args=(p["product"], p["bugzilla_domain"])
+                target=get_buginfo_of,
+                args=(product, info["bugzilla_domain"], info["offset"]),
             )
             product_thread.start()
             threads.append(product_thread)
         else:
-            get_buginfo_of(p["product"], p["bugzilla_domain"])
+            get_buginfo_of(product, info["bugzilla_domain"], info["offset"])
+
+    product_info.to_csv(product_info_file, index=True, header=True)

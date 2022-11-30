@@ -1,0 +1,77 @@
+product,bugzilla_domain,offset
+Red Hat Enterprise Linux 4,https://bugzilla.redhat.com,0
+Red Hat Enterprise Linux 2.1,https://bugzilla.redhat.com,0
+softwarecollections.org,https://bugzilla.redhat.com,0
+Networking,https://bugzilla.kernel.org,0
+Red Hat Enterprise Linux 8,https://bugzilla.redhat.com,0
+ANCK 4.19 Dev,https://bugzilla.openanolis.cn,0
+Red Hat Linux,https://bugzilla.redhat.com,0
+Toolkit,https://bugzilla.mozilla.org,0
+Red Hat Enterprise Linux 6,https://bugzilla.redhat.com,0
+Red Hat Enterprise Virtualization Manager,https://bugzilla.redhat.com,0
+NSPR,https://bugzilla.mozilla.org,0
+pve,https://bugzilla.proxmox.com,0
+Fedora Legacy,https://bugzilla.redhat.com,0
+Calendar,https://bugzilla.mozilla.org,0
+DevTools,https://bugzilla.mozilla.org,0
+Dogtag Certificate System,https://bugzilla.redhat.com,0
+Red Hat Enterprise Linux 3,https://bugzilla.redhat.com,0
+Platform Specific/Hardware,https://bugzilla.kernel.org,0
+Red Hat Enterprise Linux Advanced Virtualization,https://bugzilla.redhat.com,0
+IPFire,https://bugzilla.ipfire.org,0
+Timers,https://bugzilla.kernel.org,0
+Red Hat Satellite 5,https://bugzilla.redhat.com,0
+Virtualization,https://bugzilla.kernel.org,0
+ovirt-hosted-engine-setup,https://bugzilla.redhat.com,0
+Red Hat Enterprise Linux 7,https://bugzilla.redhat.com,0
+Firefox Health Report Graveyard,https://bugzilla.mozilla.org,0
+Memory Management,https://bugzilla.kernel.org,0
+Thunderbird,https://bugzilla.mozilla.org,0
+Webtools Graveyard,https://bugzilla.mozilla.org,0
+Core Graveyard,https://bugzilla.mozilla.org,0
+External Software Affecting Firefox Graveyard,https://bugzilla.mozilla.org,0
+Red Hat OpenStack,https://bugzilla.redhat.com,0
+Firefox,https://bugzilla.mozilla.org,0
+JBoss Enterprise Application Platform 6,https://bugzilla.redhat.com,0
+Cloud Services,https://bugzilla.mozilla.org,0
+Testing,https://bugzilla.mozilla.org,0
+JBoss Enterprise Application Platform 4,https://bugzilla.redhat.com,0
+EDK2,https://bugzilla.tianocore.org,0
+v4l-dvb,https://bugzilla.kernel.org,0
+ovirt-engine,https://bugzilla.redhat.com,0
+Firefox Graveyard,https://bugzilla.mozilla.org,0
+Tianocore Security Issues,https://bugzilla.tianocore.org,0
+File System,https://bugzilla.kernel.org,0
+Fenix,https://bugzilla.mozilla.org,0
+Other,https://bugzilla.kernel.org,0
+WebExtensions,https://bugzilla.mozilla.org,0
+Red Hat Satellite,https://bugzilla.redhat.com,0
+389,https://bugzilla.redhat.com,0
+Red Hat Public Beta,https://bugzilla.redhat.com,0
+Bugzilla,https://bugzilla.mozilla.org,0
+NSS,https://bugzilla.mozilla.org,0
+Core,https://bugzilla.mozilla.org,0
+GeckoView,https://bugzilla.mozilla.org,0
+addons.mozilla.org,https://bugzilla.mozilla.org,0
+Firefox OS Graveyard,https://bugzilla.mozilla.org,0
+Beaker,https://bugzilla.redhat.com,0
+Security Assurance,https://bugzilla.mozilla.org,0
+MailNews Core,https://bugzilla.mozilla.org,0
+Other Applications Graveyard,https://bugzilla.mozilla.org,0
+Fedora EPEL,https://bugzilla.redhat.com,0
+Red Hat Enterprise Linux 9,https://bugzilla.redhat.com,0
+Pulp,https://bugzilla.redhat.com,0
+Red Hat Enterprise MRG,https://bugzilla.redhat.com,0
+SeaMonkey,https://bugzilla.mozilla.org,0
+Firefox for iOS,https://bugzilla.mozilla.org,0
+Release Engineering,https://bugzilla.mozilla.org,0
+IO/Storage,https://bugzilla.kernel.org,0
+Add-on SDK Graveyard,https://bugzilla.mozilla.org,0
+Process Management,https://bugzilla.kernel.org,0
+Fedora,https://bugzilla.redhat.com,0
+Drivers,https://bugzilla.kernel.org,0
+Firefox for Android Graveyard,https://bugzilla.mozilla.org,0
+vdsm,https://bugzilla.redhat.com,0
+Red Hat Enterprise Linux 5,https://bugzilla.redhat.com,0
+Plugins Graveyard,https://bugzilla.mozilla.org,0
+oVirt,https://bugzilla.redhat.com,0

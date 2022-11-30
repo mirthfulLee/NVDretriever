@@ -2,7 +2,9 @@
 /result_data/cve_*
 /result_data/*.json
 /logs/retrieve_BR/*.log
+/logs/retrieve_BR_description/*.log
 /result_data/bugzilla_reports/*.csv
+/result_data/BR_with_description/*.csv
 .history
 .idea
 .vscode

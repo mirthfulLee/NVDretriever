@@ -1,0 +1,77 @@
+product,bugzilla_domain,offset
+Other Applications Graveyard,https://bugzilla.mozilla.org,999999999
+Red Hat Satellite,https://bugzilla.redhat.com,999999999
+Fenix,https://bugzilla.mozilla.org,999999999
+Firefox,https://bugzilla.mozilla.org,187500
+Release Engineering,https://bugzilla.mozilla.org,999999999
+IPFire,https://bugzilla.ipfire.org,999999999
+Networking,https://bugzilla.kernel.org,999999999
+Fedora,https://bugzilla.redhat.com,999999999
+Red Hat Enterprise Linux Advanced Virtualization,https://bugzilla.redhat.com,999999999
+Firefox for Android Graveyard,https://bugzilla.mozilla.org,999999999
+vdsm,https://bugzilla.redhat.com,999999999
+ovirt-hosted-engine-setup,https://bugzilla.redhat.com,999999999
+GeckoView,https://bugzilla.mozilla.org,999999999
+Security Assurance,https://bugzilla.mozilla.org,999999999
+Core,https://bugzilla.mozilla.org,178000
+External Software Affecting Firefox Graveyard,https://bugzilla.mozilla.org,999999999
+Toolkit,https://bugzilla.mozilla.org,999999999
+Red Hat Enterprise Linux 3,https://bugzilla.redhat.com,999999999
+Testing,https://bugzilla.mozilla.org,999999999
+Webtools Graveyard,https://bugzilla.mozilla.org,999999999
+Memory Management,https://bugzilla.kernel.org,999999999
+Plugins Graveyard,https://bugzilla.mozilla.org,999999999
+DevTools,https://bugzilla.mozilla.org,999999999
+SeaMonkey,https://bugzilla.mozilla.org,999999999
+JBoss Enterprise Application Platform 6,https://bugzilla.redhat.com,999999999
+Firefox OS Graveyard,https://bugzilla.mozilla.org,62500
+IO/Storage,https://bugzilla.kernel.org,999999999
+addons.mozilla.org,https://bugzilla.mozilla.org,999999999
+oVirt,https://bugzilla.redhat.com,999999999
+v4l-dvb,https://bugzilla.kernel.org,999999999
+Red Hat Enterprise Linux 9,https://bugzilla.redhat.com,999999999
+Red Hat Public Beta,https://bugzilla.redhat.com,999999999
+Timers,https://bugzilla.kernel.org,999999999
+Firefox for iOS,https://bugzilla.mozilla.org,999999999
+Red Hat Enterprise MRG,https://bugzilla.redhat.com,999999999
+Firefox Graveyard,https://bugzilla.mozilla.org,999999999
+Firefox Health Report Graveyard,https://bugzilla.mozilla.org,999999999
+Dogtag Certificate System,https://bugzilla.redhat.com,999999999
+Red Hat Enterprise Virtualization Manager,https://bugzilla.redhat.com,999999999
+Red Hat OpenStack,https://bugzilla.redhat.com,999999999
+Tianocore Security Issues,https://bugzilla.tianocore.org,999999999
+softwarecollections.org,https://bugzilla.redhat.com,999999999
+Red Hat Enterprise Linux 4,https://bugzilla.redhat.com,999999999
+Pulp,https://bugzilla.redhat.com,999999999
+Red Hat Enterprise Linux 5,https://bugzilla.redhat.com,999999999
+389,https://bugzilla.redhat.com,999999999
+Bugzilla,https://bugzilla.mozilla.org,999999999
+ANCK 4.19 Dev,https://bugzilla.openanolis.cn,999999999
+Core Graveyard,https://bugzilla.mozilla.org,999999999
+Red Hat Satellite 5,https://bugzilla.redhat.com,999999999
+NSPR,https://bugzilla.mozilla.org,1000
+Calendar,https://bugzilla.mozilla.org,999999999
+Platform Specific/Hardware,https://bugzilla.kernel.org,999999999
+MailNews Core,https://bugzilla.mozilla.org,999999999
+Red Hat Enterprise Linux 8,https://bugzilla.redhat.com,999999999
+Cloud Services,https://bugzilla.mozilla.org,999999999
+ovirt-engine,https://bugzilla.redhat.com,999999999
+Beaker,https://bugzilla.redhat.com,999999999
+Red Hat Linux,https://bugzilla.redhat.com,999999999
+Virtualization,https://bugzilla.kernel.org,999999999
+Add-on SDK Graveyard,https://bugzilla.mozilla.org,999999999
+Drivers,https://bugzilla.kernel.org,999999999
+NSS,https://bugzilla.mozilla.org,999999999
+WebExtensions,https://bugzilla.mozilla.org,999999999
+Process Management,https://bugzilla.kernel.org,999999999
+Red Hat Enterprise Linux 2.1,https://bugzilla.redhat.com,999999999
+pve,https://bugzilla.proxmox.com,999999999
+EDK2,https://bugzilla.tianocore.org,999999999
+JBoss Enterprise Application Platform 4,https://bugzilla.redhat.com,999999999
+Fedora EPEL,https://bugzilla.redhat.com,999999999
+Red Hat Enterprise Linux 6,https://bugzilla.redhat.com,999999999
+Red Hat Enterprise Linux 7,https://bugzilla.redhat.com,999999999
+File System,https://bugzilla.kernel.org,999999999
+Thunderbird,https://bugzilla.mozilla.org,999999999
+Other,https://bugzilla.kernel.org,999999999
+Fedora Legacy,https://bugzilla.redhat.com,999999999
