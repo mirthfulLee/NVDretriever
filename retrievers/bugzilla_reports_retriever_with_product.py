@@ -6,6 +6,7 @@ import logging
 import pandas as pd
 import threading
 import os
+import random
 
 
 def get_logger(logger_name, log_file, level=logging.INFO):
@@ -22,14 +23,15 @@ def get_logger(logger_name, log_file, level=logging.INFO):
 
 
 def get_bug_infos(rest_api, logger, headers=None, params=None):
-    for _ in range(4):
+    sleep_gap = random.randint(15, 45)
+    for _ in range(5):
         try:
             resp = requests.get(rest_api, headers=headers, params=params)
             if resp.status_code >= 400:
                 raise requests.RequestException("Failure in request")
         except:
             logger.error("**** did not get the target responce, request again")
-            time.sleep(10)
+            time.sleep(sleep_gap)
             continue
         try:
             bugzilla_bug_infos = json.loads(resp.text).get("bugs")
@@ -38,7 +40,7 @@ def get_bug_infos(rest_api, logger, headers=None, params=None):
             return bugzilla_bug_infos
         except:
             logger.error("**** can not deserialize the responce body, request again")
-            time.sleep(10)
+            time.sleep(sleep_gap)
 
     return None
 
@@ -64,7 +66,6 @@ def get_buginfo_of(product, domain, offset=0):
     logger.critical(
         "**** START the retrieving process of product {} ***".format(product)
     )
-    bug_number_per_request = 500
     result_file = "../result_data/bugzilla_reports/BR_of_{}.csv".format(
         short_product_name
     )
@@ -129,6 +130,9 @@ if multi_thread:
     pool_sema = threading.Semaphore(max_connections)
 
 if __name__ == "__main__":
+# Core,https://bugzilla.mozilla.org,365273
+# Firefox OS Graveyard,https://bugzilla.mozilla.org,62975
+    bug_number_per_request = 500
     threads = []
     for product, info in product_info.iterrows():
         if multi_thread:

@@ -90,12 +90,11 @@ def get_description_of_product(product, domain, offset=0):
         fw.writerow(bug_info_columns.keys())
         csv_f.flush()
 
-    # FIXME: 这个offset准确吗?
     BR_chunks = pd.read_csv(
         BR_file,
         chunksize=des_number_per_request,
         dtype=str,
-        skiprows=range(1, offset),
+        skiprows=range(1, offset + 1),
         header=0,
     )
     go_ahead = True
@@ -111,7 +110,7 @@ def get_description_of_product(product, domain, offset=0):
             bug_id = bug_report["bugzilla_id"]
             comments = get_comments_of_bug(domain, bug_id, logger=logger)
             if comments is None or len(comments) == 0:
-                logger.error("!!!! can not find the description of BR-{} !!!!")
+                logger.error("!!!! can not find the description of BR-{} !!!!".format(bug_id))
                 print(product + "," + domain + "," + bug_id)
                 go_ahead = False
                 break
@@ -144,7 +143,7 @@ if __name__ == "__main__":
     # get_description_of_product("389", "https://bugzilla.redhat.com")
     product_info_file = "../result_data/description_process.csv"
     product_infos = pd.read_csv(product_info_file, index_col="product")
-    multi_thread = True
+    multi_thread = False
     if multi_thread:
         max_connections = 5
         pool_sema = threading.Semaphore(max_connections)
