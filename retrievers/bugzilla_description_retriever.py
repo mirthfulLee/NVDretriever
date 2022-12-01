@@ -25,10 +25,6 @@ bug_info_columns = {
     # "is_markdown": bool, # ! 有些网站的API不提供该字段
 }
 
-BR_dir = "../result_data/bugzilla_reports"
-result_dir = "../result_data/BR_with_description"
-log_dir = "../logs/retrieve_BR_description"
-
 
 def get_logger(logger_name, log_file, level=logging.INFO):
     logger = logging.getLogger(logger_name)
@@ -82,20 +78,19 @@ def get_description_of_product(product, domain, offset=0):
     logger.critical(
         "**** START to retrieve BR description of product {} ***".format(product)
     )
-    BR_file = os.path.join(BR_dir, "BR_of_{}.csv".format(short_product_name))
-    result_file = os.path.join(result_dir, "BR_of_{}.csv".format(short_product_name))
+    BR_file = os.path.join(BR_dir, "{}.csv".format(short_product_name))
+    result_file = os.path.join(result_dir, "{}.csv".format(short_product_name))
     csv_f = open(result_file, mode="a", newline="", encoding="utf-8")
     fw = csv.writer(csv_f)
     if not os.path.getsize(result_file):
         fw.writerow(bug_info_columns.keys())
         csv_f.flush()
 
-    # FIXME: 这个offset准确吗?
     BR_chunks = pd.read_csv(
         BR_file,
         chunksize=des_number_per_request,
         dtype=str,
-        skiprows=range(1, offset),
+        skiprows=range(1, offset + 1),
         header=0,
     )
     go_ahead = True
@@ -110,12 +105,17 @@ def get_description_of_product(product, domain, offset=0):
         for index, bug_report in BR_chunk.iterrows():
             bug_id = bug_report["bugzilla_id"]
             comments = get_comments_of_bug(domain, bug_id, logger=logger)
-            if comments is None or len(comments) == 0:
-                logger.error("!!!! can not find the description of BR-{} !!!!")
+            if comments is None:
+                logger.error(
+                    "!!!! can not find the description of BR-{} !!!!".format(bug_id)
+                )
                 print(product + "," + domain + "," + bug_id)
                 go_ahead = False
                 break
             offset += 1
+            if len(comments) == 0:
+                logger.error("#### BR-{} has no description ####".format(bug_id))
+                continue
             description = comments[0]
             cur_row = bug_report.to_dict()
             # * add columns of description
@@ -134,6 +134,7 @@ def get_description_of_product(product, domain, offset=0):
     logger.critical(
         "**** DONE the retrieving process of product {} ***".format(product)
     )
+    print("**** DONE the retrieving process of product {} ***".format(product))
     product_infos.at[product, "offset"] = offset
     csv_f.close()
     if multi_thread:
@@ -141,10 +142,13 @@ def get_description_of_product(product, domain, offset=0):
 
 
 if __name__ == "__main__":
-    # get_description_of_product("389", "https://bugzilla.redhat.com")
+    BR_dir = "../result_data/bugzilla_reports"
+    result_dir = "../result_data/BR_with_description"
+    log_dir = "../logs/retrieve_BR_description"
+    # 暂时不处理 File System;Drivers;Core
     product_info_file = "../result_data/description_process.csv"
     product_infos = pd.read_csv(product_info_file, index_col="product")
-    multi_thread = True
+    multi_thread = False
     if multi_thread:
         max_connections = 5
         pool_sema = threading.Semaphore(max_connections)

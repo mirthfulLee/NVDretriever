@@ -1,19 +1,21 @@
 import pandas as pd
 import os
-import csv
-
 
 if __name__ == "__main__":
-    csv_file = "./result_data/bugzilla_reports/BR_of_389.csv"
-    df_chunks = pd.read_csv(
-        csv_file, dtype=str, header=0, skiprows=range(1, 5), chunksize=5
-    )
-    result_file = "temp_test.csv"
-    csv_f = open(result_file, mode="a", newline="", encoding="utf-8")
-    fw = csv.writer(csv_f)
-    if not os.path.getsize(result_file):
-        print("asbkjghajkshkjdfashkjdhaskjdh")
-        print(os.path.getsize(result_file))
+    temp_path = "./result_data/BR_with_description"
+    result_file = "./result_data/description_process.csv"
+    product_cnt = pd.read_csv(result_file, index_col="product")
+    # !临时删除部分product
+    file_list = os.listdir(temp_path)
+    excluded_products = [p[:-4] for p in file_list]
+    excluded_products.remove(".git")
+    excluded_products = [
+        p if p != "IO Storage" else "IO/Storage" for p in excluded_products
+    ]
+    excluded_products = [
+        p if p != "Platform Specific Hardware" else "Platform Specific/Hardware"
+        for p in excluded_products
+    ]
+    product_cnt = product_cnt.drop(index=excluded_products, axis=0)
 
-    # for df in df_chunks:
-    #     print(df)
+    product_cnt.to_csv(result_file, index=True, header=True)

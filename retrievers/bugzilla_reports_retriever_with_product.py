@@ -65,9 +65,7 @@ def get_buginfo_of(product, domain, offset=0):
         "**** START the retrieving process of product {} ***".format(product)
     )
     bug_number_per_request = 500
-    result_file = "../result_data/bugzilla_reports/BR_of_{}.csv".format(
-        short_product_name
-    )
+    result_file = "../result_data/bugzilla_reports/{}.csv".format(short_product_name)
     csv_f = open(result_file, mode="a", newline="", encoding="utf-8")
     fw = csv.writer(csv_f)
     if not os.path.getsize(result_file):
