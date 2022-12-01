@@ -24,7 +24,7 @@ target_columns = {
 
 if __name__ == "__main__":
     records_csv_file = "../result_data/all_platform_cve_bugzila_reports.csv"
-    result_file = "../result_data/des_product_info.csv"
+    result_file = "../result_data/description_process.csv"
     bz_records = pd.read_csv(records_csv_file, header=0, dtype=target_columns)
 
     # * filter Security Response
