@@ -1,33 +1,11 @@
 product,bugzilla_domain,offset
-Firefox Graveyard,https://bugzilla.mozilla.org,0
-Memory Management,https://bugzilla.kernel.org,0
-Firefox for Android Graveyard,https://bugzilla.mozilla.org,0
-NSPR,https://bugzilla.mozilla.org,0
-Calendar,https://bugzilla.mozilla.org,0
-Red Hat Linux,https://bugzilla.redhat.com,0
-Fenix,https://bugzilla.mozilla.org,0
-Toolkit,https://bugzilla.mozilla.org,0
-Red Hat OpenStack,https://bugzilla.redhat.com,0
-Other Applications Graveyard,https://bugzilla.mozilla.org,0
-GeckoView,https://bugzilla.mozilla.org,0
-Networking,https://bugzilla.kernel.org,0
-Cloud Services,https://bugzilla.mozilla.org,0
-Webtools Graveyard,https://bugzilla.mozilla.org,0
-Testing,https://bugzilla.mozilla.org,0
-Firefox for iOS,https://bugzilla.mozilla.org,0
-MailNews Core,https://bugzilla.mozilla.org,0
+MailNews Core,https://bugzilla.mozilla.org,2003
 DevTools,https://bugzilla.mozilla.org,0
 Firefox OS Graveyard,https://bugzilla.mozilla.org,0
 Firefox Health Report Graveyard,https://bugzilla.mozilla.org,0
 Add-on SDK Graveyard,https://bugzilla.mozilla.org,0
-IO/Storage,https://bugzilla.kernel.org,0
-SeaMonkey,https://bugzilla.mozilla.org,0
-ovirt-hosted-engine-setup,https://bugzilla.redhat.com,0
-WebExtensions,https://bugzilla.mozilla.org,0
-Core,https://bugzilla.mozilla.org,0
-Firefox,https://bugzilla.mozilla.org,0
-Fedora,https://bugzilla.redhat.com,0
-Core Graveyard,https://bugzilla.mozilla.org,0
+Firefox,https://bugzilla.mozilla.org,202550
+Core Graveyard,https://bugzilla.mozilla.org,13883
 NSS,https://bugzilla.mozilla.org,0
 EDK2,https://bugzilla.tianocore.org,0
 Thunderbird,https://bugzilla.mozilla.org,0

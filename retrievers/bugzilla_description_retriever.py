@@ -134,11 +134,13 @@ def get_description_of_product(product, domain, offset=0):
     logger.critical(
         "**** DONE the retrieving process of product {} ***".format(product)
     )
-    print("**** DONE the retrieving process of product {} ***".format(product))
+    print("{},{},{}".format(product, domain, offset))
     product_infos.at[product, "offset"] = offset
+    product_infos.to_csv(product_info_file, header=True, index=True)
     csv_f.close()
     if multi_thread:
         pool_sema.release()
+    
 
 
 if __name__ == "__main__":
@@ -165,5 +167,3 @@ if __name__ == "__main__":
             threads.append(product_thread)
         else:
             get_description_of_product(product, p["bugzilla_domain"], p["offset"])
-
-    product_infos.to_csv(product_info_file, header=True, index=True)
