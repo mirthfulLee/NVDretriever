@@ -71,7 +71,7 @@ def get_comments_of_bug(domain, bug_id, logger, headers=None, params=None):
 
 def get_description_of_product(product, domain, offset=0):
     des_number_per_request = 500
-    short_product_name = product.replace("/", " ")
+    short_product_name = product.replace("/", "_")
     logger = get_logger(
         product, os.path.join(log_dir, "{}.log".format(short_product_name))
     )
@@ -109,7 +109,7 @@ def get_description_of_product(product, domain, offset=0):
                 logger.error(
                     "!!!! can not find the description of BR-{} !!!!".format(bug_id)
                 )
-                print(product + "," + domain + "," + bug_id)
+                print("!!!! FAILURE:" + product + "," + domain + "," + bug_id)
                 go_ahead = False
                 break
             offset += 1
@@ -140,7 +140,6 @@ def get_description_of_product(product, domain, offset=0):
     csv_f.close()
     if multi_thread:
         pool_sema.release()
-    
 
 
 if __name__ == "__main__":

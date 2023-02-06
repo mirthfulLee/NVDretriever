@@ -1,21 +1,18 @@
+import sys
 import pandas as pd
-import os
 
 if __name__ == "__main__":
-    temp_path = "./result_data/BR_with_description"
+    product_info_file = "./result_data/product_info.csv"
     result_file = "./result_data/description_process.csv"
-    product_cnt = pd.read_csv(result_file, index_col="product")
-    # !临时删除部分product
-    file_list = os.listdir(temp_path)
-    excluded_products = [p[:-4] for p in file_list]
-    excluded_products.remove(".git")
-    excluded_products = [
-        p if p != "IO Storage" else "IO/Storage" for p in excluded_products
-    ]
-    excluded_products = [
-        p if p != "Platform Specific Hardware" else "Platform Specific/Hardware"
-        for p in excluded_products
-    ]
-    product_cnt = product_cnt.drop(index=excluded_products, axis=0)
-
-    product_cnt.to_csv(result_file, index=True, header=True)
+    product_info = pd.read_csv(product_info_file, header=0, index_col="product")
+    str_list = []
+    for line in sys.stdin:
+        s = line[:-1]
+        if s == "%%":
+            break
+        str_list.append(s)
+    df = pd.DataFrame(columns=["bugzilla_domain"], index=["product"])
+    for s in str_list:
+        df.loc[s] = product_info.loc[s]
+    df["offset"] = 0
+    df.to_csv(result_file, header=True, index=True)

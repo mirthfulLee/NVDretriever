@@ -59,7 +59,7 @@ target_columns = {
 
 
 def get_buginfo_of(product, domain, offset=0):
-    short_product_name = product.replace("/", " ")
+    short_product_name = product.replace("/", "_")
     logger = get_logger(
         product, "../logs/retrieve_BR/{}.log".format(short_product_name)
     )
@@ -128,8 +128,6 @@ if multi_thread:
     pool_sema = threading.Semaphore(max_connections)
 
 if __name__ == "__main__":
-# Core,https://bugzilla.mozilla.org,365273
-# Firefox OS Graveyard,https://bugzilla.mozilla.org,62975
     bug_number_per_request = 500
     threads = []
     for product, info in product_info.iterrows():

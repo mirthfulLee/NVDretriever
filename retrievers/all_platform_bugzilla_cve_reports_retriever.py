@@ -1,3 +1,6 @@
+# coding=uft-8
+# * retriever target: 
+# *
 import json
 import requests
 import time
@@ -109,7 +112,8 @@ if __name__ == "__main__":
                 continue
             cur_row = {}
             # bugzilla columns
-            cur_row["bugzilla_url"] = simplified_ref
+            cur_row["bugzilla_id"] = bugzilla_bug_info.get("id")
+            cur_row["bugzilla_url"] = ref_domain
             cur_row["product"] = bugzilla_bug_info.get("product")
             cur_row["component"] = bugzilla_bug_info.get("component")[0]
             cur_row["priority"] = bugzilla_bug_info.get("priority")
