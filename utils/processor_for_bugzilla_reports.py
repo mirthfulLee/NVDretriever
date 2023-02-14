@@ -1,14 +1,11 @@
-from allennlp.data import Vocabulary
-from allennlp.data.tokenizers import WhitespaceTokenizer, SpacyTokenizer
 import re
 import sys
-import pandas as pd
 
 
 def replace_tokens_simple(content):
     """process report text line by line"""
     if type(content) != str:
-        print("ERROR: not str")
+        # print("ERROR: not str")
         content = ""
         return content
 
@@ -42,14 +39,14 @@ def replace_tokens_simple(content):
 
     # * URL TAG
     content = re.sub(
-        r" http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+ ",
+        r"http[s]?://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]",
         " URLTAG ",
         content,
     )
 
     # * EMAIL TAG
     content = re.sub(
-        r"[0-9a-zA-Z_]{1,19}@[0-9a-zA-Z\.]{1,19}\.(com|net|cn)",
+        r"[0-9a-zA-Z_\-]{1,19}@[0-9a-zA-Z\.]{1,19}\.(com|net|cn)",
         " EMAILTAG ",
         content,
     )
@@ -68,14 +65,14 @@ def replace_tokens_simple(content):
 
     # * TIME TAG
     content = re.sub(
-        r"([\s:\-/\.T]\d{1,10}){3,8}(\s*\+?\d+|Z)?",
+        r"([\s:\-/\.T]\d{2,10}){3,8}(\s*\+?\d+|Z)?",
         " TIMETAG ",
         content,
     )
 
     # * NUMBER TAG
     content = re.sub(
-        r"0x[0-9a-f]+|(?<![g-z])[0-9a-f\-\.]{4,}|[\+\-]?\d+(\.\d*)?",
+        r"[\+\-]?\d+(\.[\dx]*)*|0x[0-9a-f]+|(?<![g-z])[0-9a-f\-\.]{4,}",
         " NUMBERTAG ",
         content,
         flags=re.I,

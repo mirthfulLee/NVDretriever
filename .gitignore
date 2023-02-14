@@ -5,7 +5,7 @@
 /logs/retrieve_BR_description/*.log
 /result_data/BR_info/*.csv
 /result_data/BR_with_description/*.csv
-/result_data/BR_propossed/*.csv
+/result_data/BR_processed/*.csv
 .history
 .idea
 .vscode
