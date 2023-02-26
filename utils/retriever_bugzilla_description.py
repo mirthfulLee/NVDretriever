@@ -40,8 +40,8 @@ def get_logger(logger_name, log_file, level=logging.INFO):
 
 
 def get_comments_of_bug(domain, bug_id, logger, headers=None, params=None):
-    sleep_gap = random.randint(15, 45)
-    for _ in range(5):
+    sleep_gap = random.randint(5, 15)
+    for _ in range(3):
         try:
             resp = requests.get(
                 "{}/rest/bug/{}/comment".format(domain, bug_id),
