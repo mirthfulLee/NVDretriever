@@ -1,1 +1,75 @@
-
+02-26 07:02:40 INFO: Start the process of 389 ..
+02-26 07:02:57 INFO: Start the process of Add-on SDK Graveyard ..
+02-26 07:02:57 INFO: Start the process of Beaker ..
+02-26 07:03:10 INFO: Start the process of Bugzilla ..
+02-26 07:03:10 INFO: Start the process of Calendar ..
+02-26 07:03:11 INFO: Start the process of Cloud Services ..
+02-26 07:03:11 INFO: Start the process of Core ..
+02-26 07:03:34 INFO: Start the process of Core Graveyard ..
+02-26 07:03:35 INFO: Start the process of DevTools ..
+02-26 07:03:35 INFO: Start the process of Dogtag Certificate System ..
+02-26 07:03:38 INFO: Start the process of Drivers ..
+02-26 07:03:39 INFO: Start the process of EDK2 ..
+02-26 07:03:39 INFO: Start the process of External Software Affecting Firefox Graveyard ..
+02-26 07:03:39 INFO: Start the process of Fedora ..
+02-26 07:18:17 INFO: Start the process of Fedora EPEL ..
+02-26 07:19:20 INFO: Start the process of Fedora Legacy ..
+02-26 07:20:53 INFO: Start the process of Fenix ..
+02-26 07:20:53 INFO: Start the process of File System ..
+02-26 07:20:54 INFO: Start the process of Firefox ..
+02-26 07:20:57 INFO: Start the process of Firefox Graveyard ..
+02-26 07:20:57 INFO: Start the process of Firefox Health Report Graveyard ..
+02-26 07:20:57 INFO: Start the process of Firefox OS Graveyard ..
+02-26 07:20:58 INFO: Start the process of Firefox for Android Graveyard ..
+02-26 07:20:58 INFO: Start the process of Firefox for iOS ..
+02-26 07:20:58 INFO: Start the process of GeckoView ..
+02-26 07:20:58 INFO: Start the process of IO/Storage ..
+02-26 07:20:59 INFO: Start the process of IPFire ..
+02-26 07:20:59 INFO: Start the process of JBoss Enterprise Application Platform 4 ..
+02-26 07:21:05 INFO: Start the process of JBoss Enterprise Application Platform 6 ..
+02-26 07:21:08 INFO: Start the process of MailNews Core ..
+02-26 07:21:08 INFO: Start the process of Memory Management ..
+02-26 07:21:09 INFO: Start the process of NSPR ..
+02-26 07:21:09 INFO: Start the process of NSS ..
+02-26 07:21:09 INFO: Start the process of Networking ..
+02-26 07:21:09 INFO: Start the process of Other ..
+02-26 07:21:09 INFO: Start the process of Other Applications Graveyard ..
+02-26 07:21:09 INFO: Start the process of Platform Specific/Hardware ..
+02-26 07:21:09 INFO: Start the process of Plugins Graveyard ..
+02-26 07:21:09 INFO: Start the process of Process Management ..
+02-26 07:21:09 INFO: Start the process of Pulp ..
+02-26 07:21:12 INFO: Start the process of Red Hat Enterprise Linux 2.1 ..
+02-26 07:21:34 INFO: Start the process of Red Hat Enterprise Linux 3 ..
+02-26 07:22:59 INFO: Start the process of Red Hat Enterprise Linux 4 ..
+02-26 07:27:45 INFO: Start the process of Red Hat Enterprise Linux 5 ..
+02-26 07:29:03 INFO: Start the process of Red Hat Enterprise Linux 6 ..
+02-26 07:29:47 INFO: Start the process of Red Hat Enterprise Linux 7 ..
+02-26 07:34:27 INFO: Start the process of Red Hat Enterprise Linux 8 ..
+02-26 07:34:40 INFO: Start the process of Red Hat Enterprise Linux 9 ..
+02-26 07:34:43 INFO: Start the process of Red Hat Enterprise Linux Advanced Virtualization ..
+02-26 07:34:46 INFO: Start the process of Red Hat Enterprise MRG ..
+02-26 07:34:56 INFO: Start the process of Red Hat Enterprise Virtualization Manager ..
+02-26 07:34:59 INFO: Start the process of Red Hat Linux ..
+02-26 07:35:39 INFO: Start the process of Red Hat OpenStack ..
+02-26 07:35:45 INFO: Start the process of Red Hat Public Beta ..
+02-26 07:35:48 INFO: Start the process of Red Hat Satellite ..
+02-26 07:35:52 INFO: Start the process of Red Hat Satellite 5 ..
+02-26 07:36:10 INFO: Start the process of Release Engineering ..
+02-26 07:36:10 INFO: Start the process of SeaMonkey ..
+02-26 07:36:11 INFO: Start the process of Security Assurance ..
+02-26 07:36:11 INFO: Start the process of Testing ..
+02-26 07:36:12 INFO: Start the process of Thunderbird ..
+02-26 07:36:13 INFO: Start the process of Tianocore Security Issues ..
+02-26 07:36:13 INFO: Start the process of Timers ..
+02-26 07:36:13 INFO: Start the process of Toolkit ..
+02-26 07:36:14 INFO: Start the process of Virtualization ..
+02-26 07:36:14 INFO: Start the process of WebExtensions ..
+02-26 07:36:14 INFO: Start the process of Webtools Graveyard ..
+02-26 07:36:14 INFO: Start the process of addons.mozilla.org ..
+02-26 07:36:14 INFO: Start the process of oVirt ..
+02-26 07:36:24 INFO: Start the process of ovirt-engine ..
+02-26 07:36:27 INFO: Start the process of ovirt-hosted-engine-setup ..
+02-26 07:36:30 INFO: Start the process of pve ..
+02-26 07:36:30 INFO: Start the process of softwarecollections.org ..
+02-26 07:36:33 INFO: Start the process of v4l-dvb ..
+02-26 07:36:33 INFO: Start the process of vdsm ..

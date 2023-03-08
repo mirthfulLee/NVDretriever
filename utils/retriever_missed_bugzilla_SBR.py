@@ -12,13 +12,13 @@ if __name__ == "__main__":
     br_processed_dir = "../result_data/BR_complete_processed"
 
     product_info = pd.read_csv(product_info_file)
-    SBR_info = pd.read_csv(SBR_file, nrows=30)
+    SBR_info = pd.read_csv(SBR_file)
     logger = bzd.get_logger("SBR_process", "../logs/SBR_process.log")
 
     for _, product_row in product_info.iterrows():
         product = product_row["product"]
         domain = product_row["bugzilla_domain"]
-        logger.info("#####The process of {} start..".format(product))
+        logger.info("Start the process of {} ..".format(product))
         product_file_name = product.replace("/", "_") + ".csv"
         file_with_description = os.path.join(br_dir, product_file_name)
         file_processed = os.path.join(br_processed_dir, product_file_name)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         f_desc = open(file_with_description, mode="a", newline="", encoding="utf-8")
         desc_fw = csv.writer(f_desc)
         f_processed = open(file_processed, mode="a", newline="", encoding="utf-8")
-        processed_fw = csv.writer(f_desc)
+        processed_fw = csv.writer(f_processed)
 
         existing_BR_ids = existing_BR_ids["bugzilla_id"].to_list()
         product_SBR = SBR_info[SBR_info["product"] == product]
@@ -69,10 +69,10 @@ if __name__ == "__main__":
             cur_row["description_id"] = report_desc["id"]
             cur_row["text"] = report_desc["text"]
             cur_row["is_private"] = report_desc["is_private"]
-            desc_fw.writerow(cur_row)
+            desc_fw.writerow(cur_row.values())
 
             # TODO: preprocess BR title, text and add to BR_complete_processed
             cur_row["summary"] = replace_tokens_simple(cur_row["summary"])
             cur_row["text"] = replace_tokens_simple(cur_row["text"])
             cur_row["security_relevent"] = True
-            processed_fw.writerow(cur_row)
+            processed_fw.writerow(cur_row.values())

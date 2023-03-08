@@ -1,12 +1,4 @@
 # coding=utf-8
-# TODO: 删除无用的换行符
-# TODO：合并description和CIR字段
-# TODO：统一字段名
-# TODO：统一文件格式为json？
-# TODO：把非alpha字符进行替换
-# TODO：处理code snippet?
-# TODO：处理http reference?
-# TODO：处理过长的description
 import pandas as pd
 import os
 import re
@@ -37,9 +29,6 @@ def process_bugzilla_reports(product_info: pd.DataFrame, SBR_df: pd.DataFrame):
                     cnt * chunk_size, (cnt + 1) * chunk_size - 1
                 )
             )
-            BR_df["security_relevent"] = BR_df["bugzilla_id"].map(
-                lambda x: x in relevent_SBR["bugzilla_id"]
-            )
             BR_df["summary"] = BR_df["summary"].map(replace_tokens_simple)
             BR_df["text"] = BR_df["text"].map(replace_tokens_simple)
 
@@ -69,7 +58,6 @@ if __name__ == "__main__":
     product_info_file = "../result_data/product_info.csv"
     detailed_product_info_file = "../result_data/detailed_product_info.csv"
     BR_dir = "../result_data/BR_with_description/"
-    reports_info_dir = "../result_data/bugzilla_bug_reports/"
     processed_BR_dir = "../result_data/BR_processed/"
 
     SBR_df = pd.read_csv(filtered_SBR_file, header=0)

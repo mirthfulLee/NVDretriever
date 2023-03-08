@@ -1,18 +1,30 @@
 import sys
 import pandas as pd
+import os
 
 if __name__ == "__main__":
-    product_info_file = "./result_data/product_info.csv"
-    result_file = "./result_data/description_process.csv"
-    product_info = pd.read_csv(product_info_file, header=0, index_col="product")
-    str_list = []
-    for line in sys.stdin:
-        s = line[:-1]
-        if s == "%%":
-            break
-        str_list.append(s)
-    df = pd.DataFrame(columns=["bugzilla_domain"], index=["product"])
-    for s in str_list:
-        df.loc[s] = product_info.loc[s]
-    df["offset"] = 0
-    df.to_csv(result_file, header=True, index=True)
+    data_root = "./result_data/"
+    product_info_file = os.path.join(data_root, "product_info.csv")
+    product_info = pd.read_csv(product_info_file)
+    for _, product_row in product_info.iterrows():
+        product = product_row["product"]
+        reports_file = os.path.join(
+            data_root, "BR_complete_processed", product.replace("/", "_") + ".csv"
+        )
+
+        reports = pd.read_csv(
+            reports_file,
+            usecols=[
+                "bugzilla_id",
+                "product",
+                "component",
+                "priority",
+                "severity",
+                "summary",
+                "created",
+                "description_id",
+                "text",
+                "is_private",
+            ],
+        )
+        reports.to_csv(reports_file, header=True, index=False)
