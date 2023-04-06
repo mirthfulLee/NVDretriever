@@ -86,15 +86,12 @@ def merge_csv_data_to_json():
 
 def split_two_json_file():
     bugzilla_json_file = os.path.join(data_root, "bugzilla_all_samples.json")
-    github_json_file = os.path.join(data_root, "bugzilla_all_samples.json")
+    github_json_file = os.path.join(data_root, "github_all_samples.json")
     train_file = os.path.join(data_root, "train_samples.json")
     validation_file = os.path.join(data_root, "validation_samples.json")
     test_file = os.path.join(data_root, "test_samples.json")
 
-    bugzilla_reports = json.load(open(bugzilla_json_file, "r"))
-    github_reports = json.load(open(github_json_file, "r"))
-
-    reports = bugzilla_reports + github_reports
+    reports = json.load(open(bugzilla_json_file, "r")) + json.load(open(github_json_file, "r"))
     random.shuffle(reports)
     reports_num = len(reports)
 
@@ -134,5 +131,5 @@ data_root = "../result_data/"
 
 if __name__ == "__main__":
     # merge_csv_data_to_json()
-    # split_two_json_file()
+    split_two_json_file()
     generate_dataset_mlm()

@@ -72,7 +72,7 @@ def replace_tokens_simple(content):
 
     # * NUMBER TAG
     content = re.sub(
-        r"[\+\-]?\d+(\.[\dx]*)*|0x[0-9a-f]+|(?<![g-z])[0-9a-f\-\.]{4,}",
+        r"0x[0-9a-f]+|(?<![g-z])[0-9a-f\-\.]{4,}|[\+\-]?\d+(\.[\dx]*)*",
         " NUMBERTAG ",
         content,
         flags=re.I,
